@@ -2,6 +2,8 @@
 
 A Firefox extension that converts selected text to speech using ElevenLabs' text-to-speech API.
 
+[Official Link](https://addons.mozilla.org/en-US/firefox/addon/elevenlabs-tts-interface/) - currently experimental release.
+
 ## Features
 
 - Convert any selected text on a webpage to speech
