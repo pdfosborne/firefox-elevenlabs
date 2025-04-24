@@ -1,0 +1,47 @@
+{
+  "manifest_version": 2,
+  "name": "ElevenLabs TTS Interface (unofficial)",
+  "version": "1.0",
+  "description": "An unofficial Firefox extension for ElevenLabs text-to-speech integration",
+  "icons": {
+    "48": "icons/icon-48.png",
+    "96": "icons/icon-96.png"
+  },
+  "permissions": [
+    "activeTab",
+    "storage",
+    "contextMenus",
+    "notifications"
+  ],
+  "browser_action": {
+    "default_icon": {
+      "48": "icons/icon-48.png",
+      "96": "icons/icon-96.png"
+    },
+    "default_title": "ElevenLabs TTS Interface (unofficial)",
+    "default_popup": "popup/popup.html"
+  },
+  "background": {
+    "scripts": ["background/background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content/content.js"]
+    }
+  ],
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": true
+  },
+  "commands": {
+    "play-selected-text": {
+      "suggested_key": {
+        "default": "Ctrl+Y",
+        "mac": "Command+Y"
+      },
+      "description": "Play selected text using ElevenLabs API.<br><b>Configuration</b><br>1. Click the extension icon in your Firefox toolbar<br>2. Click the 'Settings' button<br>3. Enter your ElevenLabs API key (you can get one from [ElevenLabs](https://elevenlabs.io/))"
+        
+    }
+  }
+} 

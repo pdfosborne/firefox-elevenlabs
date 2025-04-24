@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ElevenLabs Extension Settings</title>
+    <style>
+        body {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        input[type="text"], input[type="password"], select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        button {
+            background-color: #0060df;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        button:hover {
+            background-color: #003eaa;
+        }
+        .status {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 4px;
+            display: none;
+        }
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        .shortcut-input {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .shortcut-input input {
+            flex: 1;
+        }
+        .shortcut-input button {
+            white-space: nowrap;
+        }
+        .shortcut-hint {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+        }
+        .shortcut-preview {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+        }
+        .shortcut-preview p {
+            margin: 0;
+            margin-bottom: 10px;
+        }
+        .shortcut-keys {
+            font-family: monospace;
+            background-color: #fff;
+            padding: 5px 10px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            display: inline-block;
+            margin: 5px 0;
+        }
+        .voice-preview-status {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ElevenLabs Extension Settings</h1>
+        <div class="form-group">
+            <label for="apiKey">ElevenLabs API Key:</label>
+            <input type="password" id="apiKey" placeholder="Enter your ElevenLabs API key">
+        </div>
+        <div class="form-group">
+            <label for="voiceId">Select Voice:</label>
+            <select id="voiceId">
+                <option value="21m00Tcm4TlvDq8ikWAM">Rachel (Female)</option>
+                <option value="pNInz6obpgDQGcFmaJgB">Adam (Male)</option>
+                <option value="yoZ06aMxZJJ28mfd3POQ">Domi (Female)</option>
+                <option value="ThT5KcBeYPX3keUQqHPh">Josh (Male)</option>
+            </select>
+            <div class="voice-preview-status" id="voicePreviewStatus">Playing preview...</div>
+        </div>
+        <div class="form-group">
+            <label for="shortcut">Keyboard Shortcut:</label>
+            <div class="shortcut-input">
+                <input type="text" id="shortcut" readonly placeholder="Press keys to set shortcut">
+                <button id="clearShortcut">Clear</button>
+            </div>
+            <div class="shortcut-hint">
+                Press the keys you want to use for the shortcut. Must include at least one modifier key (Ctrl, Alt, Command, or Shift).
+            </div>
+            <div class="shortcut-preview">
+                <p>Current shortcut:</p>
+                <div class="shortcut-keys" id="previewKeys">Ctrl+Y</div>
+                <button id="resetShortcut">Reset to Default (Ctrl+Y)</button>
+            </div>
+        </div>
+        <button id="save">Save Settings</button>
+        <div id="status" class="status"></div>
+    </div>
+    <script src="options.js"></script>
+</body>
+</html> 
