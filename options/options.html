@@ -63,22 +63,6 @@
             background-color: #f8d7da;
             color: #721c24;
         }
-        .shortcut-input {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .shortcut-input input {
-            flex: 1;
-        }
-        .shortcut-input button {
-            white-space: nowrap;
-        }
-        .shortcut-hint {
-            font-size: 12px;
-            color: #666;
-            margin-top: 5px;
-        }
         .shortcut-preview {
             margin-top: 10px;
             padding: 10px;
@@ -87,16 +71,6 @@
         }
         .shortcut-preview p {
             margin: 0;
-            margin-bottom: 10px;
-        }
-        .shortcut-keys {
-            font-family: monospace;
-            background-color: #fff;
-            padding: 5px 10px;
-            border-radius: 4px;
-            border: 1px solid #ddd;
-            display: inline-block;
-            margin: 5px 0;
         }
         .voice-preview-status {
             font-size: 12px;
@@ -124,18 +98,9 @@
             <div class="voice-preview-status" id="voicePreviewStatus">Playing preview...</div>
         </div>
         <div class="form-group">
-            <label for="shortcut">Keyboard Shortcut:</label>
-            <div class="shortcut-input">
-                <input type="text" id="shortcut" readonly placeholder="Press keys to set shortcut">
-                <button id="clearShortcut">Clear</button>
-            </div>
-            <div class="shortcut-hint">
-                Press the keys you want to use for the shortcut. Must include at least one modifier key (Ctrl, Alt, Command, or Shift).
-            </div>
+            <label>Keyboard Shortcut:</label>
             <div class="shortcut-preview">
-                <p>Current shortcut:</p>
-                <div class="shortcut-keys" id="previewKeys">Ctrl+Y</div>
-                <button id="resetShortcut">Reset to Default (Ctrl+Y)</button>
+                <p>Use <strong>Ctrl+Y</strong> to convert selected text to speech</p>
             </div>
         </div>
         <button id="save">Save Settings</button>
